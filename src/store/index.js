@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import filters from '../reducers/filters';
-import heroes from '../reducers/heroes';
+import filters from '../components/heroesFilters/filtersSlice';
+import heroes from '../components/heroesList/heroesSlice';
 
 //Middleware
 const stringMiddleware = (store) => (next) => (action) => {
@@ -14,7 +14,7 @@ const stringMiddleware = (store) => (next) => (action) => {
 
 const store = configureStore({
     reducer: {filters, heroes},
-    moddleware: getDefaultMiddleware => getDefaultMiddleware().concat(),
+    moddleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware),
     devTools: process.env.NODE_ENV !== 'prodaction' ,
 })
 // const store = createStore( 

@@ -23,12 +23,6 @@
       "name": "Новый герой",
       "description": "Ничего",
       "element": "earth"
-    },
-    {
-      "id": "50f2b617-325b-40e0-a839-83b0be4fbbb5",
-      "name": "Герой 3",
-      "description": "все!",
-      "element": "wind"
     }
   ],
   "filters": [

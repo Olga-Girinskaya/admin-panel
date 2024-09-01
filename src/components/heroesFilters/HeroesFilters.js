@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
 
-import { filterHerous } from '../../actions';
-import { activeFilterChanged } from './filtersSlice';
+import { filterHerous, activeFilterChanged } from './filtersSlice';
 import Spinner from '../spinner/Spinner';
 
 // Задача для этого компонента:
@@ -17,11 +16,11 @@ const HeroesFilters = () => {
 
     const {filters, filtersLoadingStatus, activeFilter} = useSelector(state => state.filters);
     const dispatch = useDispatch();
-    const {request} = useHttp();
+   // const {request} = useHttp();
 
     // Запрос на сервер для получения фильтров и последовательной смены состояния
     useEffect(() => {
-        dispatch(filterHerous(request));
+        dispatch(filterHerous());
 
         // eslint-disable-next-line
     }, []);
